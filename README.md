@@ -1,3 +1,6 @@
+
+Código utlizado para clusterización de la encuesta Cep 88, utilizando el modelo K means, junto a sus loadings y sus components weigths
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
