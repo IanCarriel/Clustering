@@ -22,7 +22,7 @@ pca_features = pca.fit_transform(X_scaled)
 # Crear un DataFrame para las componentes principales
 pca_df = pd.DataFrame(data=pca_features, columns=[f'Componente Principal {i+1}' for i in range(n_components)])
 
-# Implementar K-means con 5 clusters
+# Implementar K-means con 10 clusters
 k = 10
 kmeans = KMeans(n_clusters=k, random_state=42)
 kmeans.fit(pca_features)
