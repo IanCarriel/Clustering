@@ -38,14 +38,15 @@ output_file_path = "c:/Users/ianca/OneDrive/Documentos/1er semestre 2024/DataSci
 data.to_excel(output_file_path, index=False)
 print(f"Resultados guardados en {output_file_path}")
 
+
+#Archivo Excel de salida que señala qué variables explican en mayor medida los componentes
 columns = features.columns
 loadings = pca.components_.T  # Transponer para que las filas sean las variables y las columnas los componentes
 loadings_df = pd.DataFrame(loadings, columns=[f'Component_{i+1}' for i in range(pca.n_components_)], index=columns)
-
-# Nombre del archivo Excel de salida
 output_file = 'loadings_pca.xlsx'
 loadings_df.to_excel(output_file)
 
+#Archivo Excel de salida que señala los pesos de los componentes en cada cluster
 cluster_centers = kmeans.cluster_centers_
 
 component_weights = pd.DataFrame(cluster_centers, columns=[f'Componente_{i+1}' for i in range(n_components)])
